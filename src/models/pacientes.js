@@ -7,6 +7,9 @@ const atendimentos = db.define("pacientes", {
         primaryKey: true,
         autoIncrement: true,
     },
+    nome: {
+        type: DataTypes.INTEGER,
+    },
 }, {
     tableName: 'pacientes', 
 });
