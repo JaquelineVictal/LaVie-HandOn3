@@ -13,9 +13,9 @@ const DB_CONFIG = {
 const db = {};
 
 try {
-    db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);    
+    db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);     
 } catch (error) {
-    console.error("Erro ao tentar conectar ao Banco de Dados 1!");
+    console.error("Erro ao tentar conectar ao Banco de Dados 1!"); // Esta imprimindo esse erro apresentando que db.define não é uma função.
 }
 
 async function hasConection(){
