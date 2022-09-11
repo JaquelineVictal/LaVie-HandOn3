@@ -14,7 +14,6 @@
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Pessoas Contribuidoras](#pessoas-contribuidoras)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras-do-projeto)
-* [Licença](#licença)
 * [Conclusão](#conclusão)
 
 
@@ -30,9 +29,13 @@
 ## Tecnologias utilizadas
 
 ## Pessoas Contribuidoras
+  
+ ` Jaqueline Victal `,  ` Aline Galvão `,   ` Thais Freire `,  ` Gabriel da Silva `,  ` Hellimateas Barros `, `Vinicius Oliveira`
 
 ## Pessoas Desenvolvedoras do Projeto
 
-## Licença
+   ` Jaqueline Victal `,  ` Aline Galvão `,   ` Thais Freire `,  ` Gabriel da Silva `,  ` Hellimateas Barros `
+  
+  <a href="https://github.com/Hellimateas"> <img src="https://img.shields.io/badge/GitHub-Hellimateas-100000?style=for-the-badge&logo=github&logoColor=white" /> </a>
   
 ## Conclusão
