@@ -1,6 +1,6 @@
 const express = require("express");
 const atendimentoController = require("../controller/atendimentoController");
-const pacienteController = require("../controller/pacienteControllerr");
+const pacienteController = require("../controller/pacienteController");
 const psicologoController = require("../controller/psicologoController");
 const routes = express.Router();
 
