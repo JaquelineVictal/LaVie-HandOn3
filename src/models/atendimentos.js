@@ -1,7 +1,7 @@
 const db = require("../database");
 const { DataTypes } = require('sequelize');
 
-// Esta dando erro no db.define perguntar na aula segunda feira
+// Esta dando erro no db.define perguntar na aula segunda feira para o professor
 const atendimentos = db.define("atendimentos", {
     id_Atendimentos: {
         type: DataTypes.INTEGER,
