@@ -1,21 +1,23 @@
 const express = require("express");
-const produtoController = require("../controllers/produtoController");
+const atendimentoController = require("../controller/atendimentoController");
+const pacienteController = require("../controller/pacienteControllerr");
+const psicologoController = require("../controller/psicologoController");
 const routes = express.Router();
 
-routes.get("/dashboard/psicologos", );
-routes.get("/dashboard/psicologos/:id")
-routes.post("/dashboard/psicologos", );
-routes.delete("/dashboard/psicologos/:id", );
-routes.put("/dashboard/psicologos/:id", );
+routes.get("/dashboard/psicologos", psicologoController.listarPsicologo);
+routes.get("/dashboard/psicologos/:id", psicologoController.listarPsicologo);
+routes.post("/dashboard/psicologos", psicologoController.cadastrarPsicologo);
+routes.delete("/dashboard/psicologos/:id", psicologoController.listarPsicologo);
+routes.put("/dashboard/psicologos/:id", psicologoController.listarPsicologo);
 
-routes.get("/dashboard/pacientes", );
-routes.get("/dashboard/pacientes/:id")
-routes.post("/dashboard/pacientes", );
-routes.delete("/dashboard/pacientes/:id", );
-routes.put("/dashboard/pacientes/:id", );
+routes.get("/dashboard/pacientes", pacienteController.listarPaciente);
+routes.get("/dashboard/pacientes/:id", pacienteController.listarPaciente);
+routes.post("/dashboard/pacientes", pacienteController.cadastrarPaciente);
+routes.delete("/dashboard/pacientes/:id", pacienteController.listarPaciente);
+routes.put("/dashboard/pacientes/:id", pacienteController.listarPaciente);
 
-routes.get("/dashboard/atendimentos", );
-routes.get("/dashboard/atendimentos/:id")
-routes.post("/dashboard/atendimentos", );
+routes.get("/dashboard/atendimentos", atendimentoController.listarAtendimento);
+routes.get("/dashboard/atendimentos/:id", atendimentoController.listarAtendimento);
+routes.post("/dashboard/atendimentos", atendimentoController.cadastrarAtendimento);
 
 module.exports = routes;
