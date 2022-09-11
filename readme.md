@@ -36,13 +36,5 @@
 
    ` Jaqueline Victal `,  ` Aline Galvão `,   ` Thais Freire `,  ` Gabriel da Silva `,  ` Hellimateas Barros `
   
-  <a href="https://github.com/Hellimateas" target="_blank"> <img src="https://img.shields.io/badge/GitHub-Hellimateas-100000?style=for-the-badge&logo=github&logoColor=white" /> </a>
   
-    <a href="https://github.com/JaquelineVictal" target="_blank"> <img src="https://img.shields.io/badge/GitHub-Jaqueline-100000?style=for-the-badge&logo=github&logoColor=white" /> </a>
-  
-    <a href="https://github.com/thisfreire" target="_blank"> <img src="https://img.shields.io/badge/GitHub-Thais_Freire-100000?style=for-the-badge&logo=github&logoColor=white" /> </a>
-  
-    <a href="https://github.com/Hellimateas" target="_blank"> <img src="https://img.shields.io/badge/GitHub-Hellimateas-100000?style=for-the-badge&logo=github&logoColor=white" /> </a>
-  
-    <a href="https://github.com/Hellimateas" target="_blank"> <img src="https://img.shields.io/badge/GitHub-Hellimateas-100000?style=for-the-badge&logo=github&logoColor=white" /> </a>
 ## Conclusão
