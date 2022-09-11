@@ -4,7 +4,7 @@ const atendimentosController = {
         res.json([{ id : "1" }, { id : "2" }]);
     },
 
-    async cadastrarAtendimento: (req, res) => {
+    async cadastrarAtendimento(req, res) {
         const { id_Atendimentos, id_Paciente, id_Psicologo, dataAtendimento } = req.body;
         
         const novoAtendimento = await atendimentos.create({
