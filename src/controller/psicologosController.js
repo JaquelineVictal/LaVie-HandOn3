@@ -1,14 +1,17 @@
-const atendimentos = require("../models/psicologos");
+const psicologos = require("../models/psicologos");
+
+
+
 const psicologosController = {
-    listarPsicologo: (req, res) => {
-        res.json([{ id : "1" , nome : "Maria Joaquina" }, { id : "2" , nome : "João Felipe" }]);
+    listarPsicologo: async (req, res) => {
+        const listaDePsicologo = await psicologos.findAll();
+        res.json(listaDePsicologo)
     },
 
     async cadastrarPsicologo(req, res) {
-        const { id_Psicologos, nome, email, senha, apresentacao } = req.body;
+        const { nome, email, senha, apresentacao } = req.body;
         
-        const novoPsicologo = await pacientes.create({
-            id_Psicologos,
+        const novoPsicologo = await psicologos.create({
             nome,
             email,
             senha,

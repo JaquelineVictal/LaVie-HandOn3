@@ -1,38 +1,30 @@
-const db = require("../database");
+const db = require("../database/index");
 const { DataTypes } = require('sequelize');
 
 // Esta dando erro no db.define perguntar na aula segunda feira para o professor
-const atendimentos = db.define("atendimentos", {
+const Atendimentos = db.define("atendimentos", {
     id_Atendimentos: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     },
     id_Pacientes: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+        type: DataTypes.INTEGER
     },
     id_Psicologos: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+        type: DataTypes.INTEGER
     },
     dataAtendimento: {
         type: DataTypes.DATE,
         //Precisa atualizar o tipo de informação
     },
     observacao: {
+        type: DataTypes.STRING,
         //Precisa atualizar o tipo de informação
-    },
-    Pacientes_id_Pacientes: {
-        //Precisa atualizar o tipo de informação
-    },
-    Psicologos_id_Psicologos: {
-        //Precisa atualizar o tipo de informação
-    },
+    }
 }, {
     tableName: 'atendimentos', 
+    timestamps: false
 });
 
-module.exports = atendimentos;
+module.exports = Atendimentos

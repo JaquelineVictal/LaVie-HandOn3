@@ -1,4 +1,4 @@
-const atendimentos = require("../models/atendimentos");
+const atendimentos = require("../models/Atendimentos");
 const atendimentosController = {
     listarAtendimento: (req, res) => {
         res.json([{ id : "1" }, { id : "2" }]);
