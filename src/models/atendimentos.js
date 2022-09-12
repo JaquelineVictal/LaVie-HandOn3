@@ -11,28 +11,22 @@ const atendimentos = db.define("atendimentos", {
     id_Pacientes: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
     },
     id_Psicologos: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+        primaryKey: true,   
     },
     dataAtendimento: {
         type: DataTypes.DATE,
         //Precisa atualizar o tipo de informação
     },
     observacao: {
-        //Precisa atualizar o tipo de informação
+        type: DataTypes.STRING
     },
-    Pacientes_id_Pacientes: {
-        //Precisa atualizar o tipo de informação
-    },
-    Psicologos_id_Psicologos: {
-        //Precisa atualizar o tipo de informação
-    },
-}, {
+    }, 
+    {
     tableName: 'atendimentos', 
+    timestamps: false
 });
 
 module.exports = atendimentos;
