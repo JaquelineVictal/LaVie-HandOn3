@@ -1,20 +1,26 @@
-const pacientes = require("../models/pacientes");
-const atendimentos = require("../models/atendimentos");
+
+const Pacientes = require("../models/pacientes");
+
 
 const pacientesController = {
-    listarPaciente: (req, res) => {
-        res.json([{ id : "1" , nome : "Maria Joaquina" }, { id : "2" , nome : "João Felipe" }]);
+    // Get all 
+
+    listAll: async (req, res) => {
+        // select * from gender
+        const pacientes = await Pacientes.findAll();
+
+        return res.status(200).json(pacientes);
     },
 
-    async cadastrarPaciente(req, res) {
-        const { id_Pacientes, nome } = req.body;
+
+    cadastrarPaciente: async (req, res) => {
+        const { nome } = req.body;
         
-        const novoPaciente = await pacientes.create({
-            id_Pacientes,
+        const novoPaciente = await Pacientes.create({
             nome,
         });
 
-        res.json(novoPaciente);
+        return res.status(201).json(novoPaciente);
     },
 
     async deletarPaciente(req, res) {
