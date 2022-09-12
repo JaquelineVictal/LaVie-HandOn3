@@ -10,7 +10,7 @@ const DB_CONFIG = {
 };
 
 // Conexão com o banco de dados
-const db = {};
+let db = {};
 
 try {
     db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);     
