@@ -1,4 +1,6 @@
-const atendimentos = require("../models/psicologos");
+const psicologos = require("../models/psicologos");
+const atendimentos = require("../models/atendimentos");
+
 const psicologosController = {
     listarPsicologo: (req, res) => {
         res.json([{ id : "1" , nome : "Maria Joaquina" }, { id : "2" , nome : "João Felipe" }]);
@@ -20,15 +22,15 @@ const psicologosController = {
 
     async deletarPsicologo(req, res) {
         try {
-        const { id_Psicologos } = req.params;
+        const { id } = req.params;
     
-        await Produtos.destroy({
+        await psicologos.destroy({
           where: {
-            id_Psicologos,
+            id_Psicologos: id,
           },
         });
     
-        res.status(204).json("Psicologo deletado com sucesso!");
+        res.status(204);
       } catch(error) {
         return res.status(404).json("Id não encontrado!");
       }

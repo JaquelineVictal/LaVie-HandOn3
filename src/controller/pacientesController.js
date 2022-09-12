@@ -1,4 +1,6 @@
-const atendimentos = require("../models/pacientes");
+const pacientes = require("../models/pacientes");
+const atendimentos = require("../models/atendimentos");
+
 const pacientesController = {
     listarPaciente: (req, res) => {
         res.json([{ id : "1" , nome : "Maria Joaquina" }, { id : "2" , nome : "João Felipe" }]);
@@ -17,15 +19,15 @@ const pacientesController = {
 
     async deletarPaciente(req, res) {
         try {
-        const { id_Pacientes } = req.params;
+        const { id } = req.params;
     
-        await Produtos.destroy({
+        await pacientes.destroy({
           where: {
-            id_Pacientes,
+            id_Pacientes: id,
           },
         });
     
-        res.status(204).json("Paciente deletado com sucesso!");
+        res.status(204);
       } catch(error) {
         return res.status(404).json("Id não encontrado!");
       }
