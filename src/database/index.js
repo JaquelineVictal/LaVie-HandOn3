@@ -1,16 +1,16 @@
 const Sequelize = require("sequelize");
 
-const DB_NAME = "LaVie";
+const DB_NAME = "lavie";
 const DB_USER = "root";
-const DB_PASS = "";
+const DB_PASS = "admin";
 const DB_CONFIG = { 
     dialect: 'mysql', 
     host: 'localhost', 
-    port: 3306
+    port: 3307,
 };
 
 // Conexão com o banco de dados
-const db = {};
+let db = {};
 
 try {
     db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);     
