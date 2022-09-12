@@ -18,7 +18,7 @@ const psicologos = db.define("psicologos", {
         type: DataTypes.INTEGER,
     },
     apresentacao: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
     },
 }, {
     tableName: 'psicologos', 

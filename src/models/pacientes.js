@@ -11,8 +11,15 @@ const pacientes = db.define("pacientes", {
     nome: {
         type: DataTypes.INTEGER,
     },
+    email: {
+        type: DataTypes.STRING,
+    },
+    dataNascimento: {
+        type: DataTypes.DATE,
+    }
 }, {
     tableName: 'pacientes', 
+    timestamps: false
 });
 
 module.exports = pacientes;

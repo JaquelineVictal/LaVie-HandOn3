@@ -20,7 +20,7 @@ const psicologosController = {
   },
 
   async deletarPsicologo(req, res) {
-    
+    try{
     const {id} = req.params
       await psicologos.destroy({
         where: {
@@ -28,10 +28,10 @@ const psicologosController = {
         },
       })
     
-    console.log(id)
-    console.log("depois")
     res.status(204).json()
-    
+    } catch(error){
+        return res.status(404).json("Id não encontrado!");
+    }
   }
 }
 
