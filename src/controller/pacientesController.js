@@ -1,21 +1,27 @@
-const pacientes = require("../models/pacientes");
+const Pacientes = require("../models/pacientes");
+
 
 const pacientesController = {
-    listarPaciente: async (req, res) => {
-        const listaDePaciente = await pacientes.findAll()
-        res.json(listaDePaciente)
+    // Get all 
+
+    listAll: async (req, res) => {
+        // select * from gender
+        const pacientes = await Pacientes.findAll();
+
+        return res.status(200).json(pacientes);
     },
 
-    async cadastrarPaciente(req, res) {
-        const { nome, email, dataNascimento} = req.body;
+
+    cadastrarPaciente: async (req, res) => {
+        const { nome } = req.body;
         
-        const novoPaciente = await pacientes.create({
+        const novoPaciente = await Pacientes.create({
             nome,
             email,
             dataNascimento
         });
 
-        res.json(novoPaciente);
+        return res.status(201).json(novoPaciente);
     },
 
     async deletarPaciente(req, res) {
@@ -23,15 +29,15 @@ const pacientesController = {
         const { id } = req.params;
     
         await pacientes.destroy({
-          where: {
-            id_Pacientes: id,
-          },
+            where: {
+                id_Pacientes: id,
+            },
         });
     
         res.status(204);
-      } catch(error) {
+        } catch(error) {
         return res.status(404).json("Id não encontrado!");
-      }
+        }
     },
 };
 
