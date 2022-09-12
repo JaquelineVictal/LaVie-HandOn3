@@ -10,6 +10,7 @@ const Atendimentos = db.define("atendimentos", {
     },
     id_Pacientes: {
         type: DataTypes.INTEGER,
+
         //primaryKey: true,
         
        
@@ -18,6 +19,8 @@ const Atendimentos = db.define("atendimentos", {
         type: DataTypes.INTEGER,
         //primaryKey: true,
         
+
+       
     },
     dataAtendimento: {
         type: DataTypes.DATE
@@ -25,13 +28,16 @@ const Atendimentos = db.define("atendimentos", {
     },
     observacao: {
         type: DataTypes.STRING
+
         //Precisa atualizar o tipo de informação
     },
     
 }, {
     tableName: 'atendimentos',
     timestamps: false, 
-});
+    },   
+
+);
 
 
 

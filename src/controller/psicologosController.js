@@ -1,4 +1,7 @@
+
 const Psicologos = require("../models/psicologos");
+
+
 
 const psicologosController = {
     
@@ -35,6 +38,7 @@ const psicologosController = {
         return res.status(201).res.json(novoPsicologo);
     },
 
+
     // Editar por Id
 
     updatePsicologo:  async (req, res) => {
@@ -58,6 +62,23 @@ const psicologosController = {
         return res.status(200).json(psicologoUpdate);
       },
     
+
+    deletarPsicologo: async (req, res) => {
+        try {
+        const { id_Psicologo } = req.params;
+    
+        await psicologos.destroy({
+          where: {
+            id_Psicologos: id,
+          },
+        });
+    
+        res.status(204);
+      } catch(error) {
+        return res.status(404).json("Id não encontrado!");
+      }
+    },
+
 };
 
 
