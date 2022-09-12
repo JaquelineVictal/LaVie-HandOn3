@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/JaquelineVictal/LaVie-HandOn3#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.6"
   }
 }
