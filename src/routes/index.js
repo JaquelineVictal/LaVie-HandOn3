@@ -7,7 +7,7 @@ const routes = express.Router();
 routes.get("/dashboard/psicologos", psicologosController.listarPsicologo);
 routes.get("/dashboard/psicologos/:id", psicologosController.listarPsicologo);
 routes.post("/dashboard/psicologos/cadastrar", psicologosController.cadastrarPsicologo);
-routes.delete("/dashboard/psicologos/:id", psicologosController.listarPsicologo); //Precisa criar a rota
+routes.delete("/dashboard/psicologos/:id", psicologosController.deletarPsicologo); //Precisa criar a rota
 routes.put("/dashboard/psicologos/:id", psicologosController.listarPsicologo);  //Precisa criar a rota
 
 routes.get("/dashboard/pacientes", pacientesController.listarPaciente);
