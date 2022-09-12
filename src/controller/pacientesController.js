@@ -14,6 +14,22 @@ const pacientesController = {
 
         res.json(novoPaciente);
     },
+
+    async deletarPaciente(req, res) {
+        try {
+        const { id_Pacientes } = req.params;
+    
+        await Produtos.destroy({
+          where: {
+            id_Pacientes,
+          },
+        });
+    
+        res.status(204).json("Paciente deletado com sucesso!");
+      } catch(error) {
+        return res.status(404).json("Id não encontrado!");
+      }
+    },
 };
 
 module.exports = pacientesController;

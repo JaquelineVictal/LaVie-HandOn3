@@ -17,6 +17,22 @@ const psicologosController = {
 
         res.json(novoPsicologo);
     },
+
+    async deletarPsicologo(req, res) {
+        try {
+        const { id_Psicologos } = req.params;
+    
+        await Produtos.destroy({
+          where: {
+            id_Psicologos,
+          },
+        });
+    
+        res.status(204).json("Psicologo deletado com sucesso!");
+      } catch(error) {
+        return res.status(404).json("Id não encontrado!");
+      }
+    },
 };
 
 module.exports = psicologosController;
