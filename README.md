@@ -16,7 +16,7 @@
 <br>
 <br>
 <h2>💻 Sobre o projeto</h2>
-<p>Projeto solicitado pela Gama Academy, sendo mentorado pelo <a href="https://www.linkedin.com/in/vinnydeveloper/>Professor Vinny</a>. A finalidade é criar uma API (JS, MySQL, Node/Express) que envolva utilizar GET, POST, PUT e DELETE (CRUD) juntamente com um banco de dados, que por final terão endpoints que possibilitará o uso dessa mesma API. O objetivo é tambem colocar em prática os conhecimentos de backend criando uma API com endpoints e documentação pronta pra uso.</p>
+<p>Projeto solicitado pela Gama Academy, sendo mentorado pelo professor Vinny. A finalidade é criar uma API (JS, MySQL, Node/Express) que envolva utilizar GET, POST, PUT e DELETE (CRUD) juntamente com um banco de dados, que por final terão endpoints que possibilitará o uso dessa mesma API. O objetivo é tambem colocar em prática os conhecimentos de backend criando uma API com endpoints e documentação pronta pra uso.</p>
 <br>
 
 ###    Escopo:
