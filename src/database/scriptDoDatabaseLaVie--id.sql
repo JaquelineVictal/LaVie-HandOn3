@@ -77,7 +77,7 @@ CREATE TABLE `psicologos` (
   `id_Psicologos` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `senha` varchar(200) NOT NULL,
   `apresentacao` varchar(255) NOT NULL,
   PRIMARY KEY (`id_Psicologos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;

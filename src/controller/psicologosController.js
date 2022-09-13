@@ -1,5 +1,6 @@
 
 const Psicologos = require("../models/psicologos");
+const bcrypt = require("bcryptjs");
 
 
 
