@@ -11,7 +11,7 @@ routes.delete("/dashboard/psicologos/:id", psicologosController.deletarPsicologo
 routes.put("/dashboard/psicologos/:id", psicologosController.listarPsicologo);  //Precisa criar a rota
 
 routes.get("/dashboard/pacientes", pacientesController.listarPaciente);
-routes.get("/dashboard/pacientes/:id", pacientesController.listarPaciente);
+routes.get("/dashboard/pacientes/:id", pacientesController.listarUmPaciente);
 routes.post("/dashboard/pacientes/cadastrar", pacientesController.cadastrarPaciente);
 routes.delete("/dashboard/pacientes/:id", pacientesController.deletarPaciente);  
 routes.put("/dashboard/pacientes/:id", pacientesController.listarPaciente);  //Precisa criar a rota
