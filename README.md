@@ -77,7 +77,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### Autores
 ---
 <p><a href="https://github.com/JaquelineVictal">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/78887686?v=4"/>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/78887686?v=4" width="100px;/>
  <br />
  <sub><b>Jaqueline Victal</b></sub></p></a>
 
@@ -87,17 +87,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
  <sub><b>Gabriel</b></sub></p></a>
 
 <p><a href="https://github.com/alonealines">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/100536475?v=4"/>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/100536475?v=4" width="100px;/>
  <br />
  <sub><b>Aline Galvão</b></sub></p></a>
 
 <p><a href="https://github.com/hellimateas">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/91029460?v=4"/>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/91029460?v=4" width="100px;/>
  <br />
  <sub><b>Hellimateas</b></sub></p></a>
 
 <p><a href="https://github.com/thisfreire">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/108819944?v=4"/>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/108819944?v=4" width="100px;/>
  <br />
  <sub><b>Thais Freire</b></sub></p></a>
  <p>Solicitado por <a href="https://github.com/gamaacademy">Gama Academy</a></p>
