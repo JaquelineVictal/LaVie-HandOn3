@@ -8,35 +8,92 @@ const psicologosController = {
     // Get all 
 
     listAll: async (req, res) => {
-        // select * from gender
+
+        try {
+            // select * from gender
         const psicologos = await Psicologos.findAll();
     
         return res.status(200).json(psicologos);
+            
+        } catch (error) {
+            console.log(error);            
+        }
+        
       },
     
     // Get by id
     getOne: async (req, res) => {
         const { id_Psicologos } = req.params;
+        
+        try {
+            const psicologo = await Psicologos.findByPk(id_Psicologos);
     
-        const psicologo = await Psicologos.findByPk(id_Psicologos);
-    
-        return  res.status(200).json(psicologo);
+            return  res.status(200).json(psicologo);
+        } catch (error) {
+            console.log(error);    
+        }
+        
       },
 
     // Cadastro de Psicilogos
 
     cadastrarPsicologo: async (req, res) => {
         const { nome, email, senha, apresentacao } = req.body;
-        
-        const novoPsicologo = await Psicologos.create({
+
+        try {
+            const senhaHash = bcrypt.hashSync(senha, 10);
+
+            const userSaved = await Psicologos.count({
+                where: {
+                  email
+                },
+              });
+                      
+         if (userSaved) {
+            return res.status(400).json("Email já cadastrado");
+          }
+    
+          const novoPsicologo = await Psicologos.create({
             nome,
             email,
-            senha,
+            senha: senhaHash,
             apresentacao
         });
+    
+          return res.status(201).json(novoPsicologo);
+        } catch (error) {
+          console.log(error);
+        }
+        
+    },   
 
-        return res.status(201).res.json(novoPsicologo);
-    },
+    login: async (req, res) => {
+
+        const { email, senha } = req.body;
+
+        try {
+
+            const userSaved = await Psicologos.findOne({
+                where: {
+                  email,
+                },
+              });
+          
+              if (!userSaved) {
+                return res.status(400).json("Usuario não cadastrado");
+              }
+          
+              if (!bcrypt.compareSync(senha, userSaved.senha)) {
+                return res.status(400).json("Senha incorreta");
+              }
+          
+              return res.status(200).json("Login com sucesso!");
+            
+        } catch (error) {
+            console.log(error);
+        }   
+      },
+    
 
 
     // Editar por Id
@@ -44,22 +101,30 @@ const psicologosController = {
     updatePsicologo:  async (req, res) => {
         const { id_Psicologos } = req.params;
         const { nome, email, senha, apresentacao } = req.body;
+
+        try {
+
+            const psicologoUpdate = await Psicologos.update(
+                {
+                  nome,
+                  email,
+                  senha,
+                  apresentacao
+                },
+                {
+                  where: {
+                      id_Psicologos,
+                  },
+                }
+              );
+          
+              return res.status(200).json(psicologoUpdate);
+            
+        } catch (error) {
+            console.log(error);
+        }
     
-        const psicologoUpdate = await Psicologos.update(
-          {
-            nome,
-            email,
-            senha,
-            apresentacao
-          },
-          {
-            where: {
-                id_Psicologos,
-            },
-          }
-        );
-    
-        return res.status(200).json(psicologoUpdate);
+        
       },
     
 
@@ -67,9 +132,9 @@ const psicologosController = {
         try {
         const { id_Psicologo } = req.params;
     
-        await psicologos.destroy({
+        await Psicologos.destroy({
           where: {
-            id_Psicologos: id,
+            id_Psicologo
           },
         });
     
