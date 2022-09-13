@@ -4,9 +4,6 @@
 <p align="center">Projeto solicitado no XP 44 da <a href="https://gama.academy"> Gama Academy</a>. Back-end: Criação de API e Banco de dados</p>
 <hr>
 
-
-<hr>
-
 <p align="center">
  <a href="">API Documentação</a> •
 </p>
@@ -16,20 +13,14 @@
 	✔️  la vie saúde mental // API  ✔️
     
 </h4>
-
 <br>
-
+<br>
 <h2>💻 Sobre o projeto</h2>
 <p>Projeto solicitado pela Gama Academy, sendo mentorado pelo <a href="https://www.linkedin.com/in/vinnydeveloper/>Professor Vinny</a>. A finalidade é criar uma API (JS, MySQL, Node/Express) que envolva utilizar GET, POST, PUT e DELETE (CRUD) juntamente com um banco de dados, que por final terão endpoints que possibilitará o uso dessa mesma API. O objetivo é tambem colocar em prática os conhecimentos de backend criando uma API com endpoints e documentação pronta pra uso.</p>
 <br>
 
 ###    Escopo:
-    Um grupo de psicólogos se juntaram e criaram a
-clínica La Vie - Saúde Mental que oferece
-diversos tipos de terapia.
-
-Para ajudar nos atendimentos, eles precisam de uma API que permita criar registros de
-psicólogos, pacientes e prontuários.
+Um grupo de psicólogos se juntaram e criaram a clínica La Vie - Saúde Mental que oferece diversos tipos de terapia. Para ajudar nos atendimentos, eles precisam de uma API que permita criar registros de psicólogos, pacientes e prontuários.
 
 ### ✔️ Etapas e funcionalidades:
 
