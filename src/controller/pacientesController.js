@@ -1,10 +1,28 @@
 const pacientes = require("../models/pacientes");
-const atendimentos = require("../models/atendimentos");
 
 const pacientesController = {
-    listarPaciente: (req, res) => {
-        res.json([{ id : "1" , nome : "Maria Joaquina" }, { id : "2" , nome : "João Felipe" }]);
+    listarPaciente: async (req, res) => {
+        const listaPacientes = await pacientes.findAll();
+
+        res.status(200).json(listaPacientes);
     },
+
+    listarUmPaciente: async (req, res) => {
+      try {
+        const { id } = req.params;
+    
+        const listaUm = await pacientes.findOne({
+          where: {
+            id_Pacientes: id,
+          },
+        });
+    
+        res.status(200).json(listaUm);
+      } catch(error) {
+        return res.status(404).json("Id não encontrado!");
+      }
+    },
+  
 
     async cadastrarPaciente(req, res) {
         const { id_Pacientes, nome } = req.body;
