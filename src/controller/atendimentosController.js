@@ -5,7 +5,7 @@ const atendimentosController = {
 
  listAll: async (req, res) => {
     // select * from gender
-    const atendimentos = await Atendimentos .findAll();
+    const atendimentos = await Atendimentos.findAll();
 
     return res.status(200).json(atendimentos);
 },
