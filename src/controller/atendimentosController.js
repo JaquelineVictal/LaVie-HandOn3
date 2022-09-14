@@ -13,10 +13,8 @@ const atendimentosController = {
             id_Psicologo,
             dataAtendimento,
             observacao,
-            Pacientes_id_Pacientes,
-            Psicologos_id_Psicologos,
         });
-
+        
         res.json(novoAtendimento);
     },
 };

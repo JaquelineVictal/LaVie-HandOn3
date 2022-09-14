@@ -1,5 +1,5 @@
-const db = require("../database");
 const { DataTypes } = require('sequelize');
+const db = require("../database");
 
 // Esta dando erro no db.define perguntar na aula segunda feira para o professor
 const atendimentos = db.define("atendimentos", {
@@ -33,6 +33,6 @@ const atendimentos = db.define("atendimentos", {
     },
 }, {
     tableName: 'atendimentos', 
-});
+//});
 
 module.exports = atendimentos;

@@ -1,19 +1,20 @@
 const Sequelize = require("sequelize");
+const db = require("../database");
 
-const DB_NAME = "LaVie";
-const DB_USER = "root";
-const DB_PASS = "";
-const DB_CONFIG = { 
+const db_NAME = "scriptDoDatabaseLaVie--id";
+const db_USER = "root";
+const db_PASS = "";
+const db_CONFIG = { 
     dialect: 'mysql', 
     host: 'localhost', 
     port: 3306
 };
 
 // Conexão com o banco de dados
-const db = {};
-
+//const db = {};
+// Constante db ja esta sendo declarada
 try {
-    db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);     
+    db = new Sequelize(db_NAME, db_USER, db_PASS, db_CONFIG);     
 } catch (error) {
     console.error("Erro ao tentar conectar ao Banco de Dados 1!"); // Esta imprimindo esse erro apresentando que db.define não é uma função.
 }

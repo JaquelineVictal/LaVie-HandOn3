@@ -1,8 +1,9 @@
-const db= require("../database");
 const { DataTypes } = require('sequelize');
+const db = require("../database");
+
 
 // Esta dando erro no db.define perguntar na aula segunda feira
-const atendimentos = db.define("psicologos", {
+//const atendimentos = db.define("psicologos", {
     id_Psicologos: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,6 +23,6 @@ const atendimentos = db.define("psicologos", {
     },
 }, {
     tableName: 'psicologos', 
-});
+//});
 
 module.exports = psicologos;

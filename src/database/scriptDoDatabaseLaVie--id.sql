@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
--- Host: localhost    Database: lavie
+-- Host: localhost    db: lavie
 -- ------------------------------------------------------
 -- Server version	8.0.30
 
@@ -35,7 +35,7 @@ CREATE TABLE `atendimentos` (
   KEY `fk_Atendimentos_Psicologos1_idx` (`Psicologos_id_Psicologos`),
   CONSTRAINT `fk_Atendimentos_Pacientes` FOREIGN KEY (`Pacientes_id_Pacientes`) REFERENCES `pacientes` (`id_Pacientes`),
   CONSTRAINT `fk_Atendimentos_Psicologos1` FOREIGN KEY (`Psicologos_id_Psicologos`) REFERENCES `psicologos` (`id_Psicologos`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=Innodb DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `pacientes` (
   `dataNascimento` date NOT NULL,
   PRIMARY KEY (`id_Pacientes`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=Innodb DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +87,7 @@ CREATE TABLE `psicologos` (
   `senha` varchar(45) NOT NULL,
   `apresentacao` varchar(255) NOT NULL,
   PRIMARY KEY (`id_Psicologos`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=Innodb DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,11 +100,11 @@ LOCK TABLES `psicologos` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'lavie'
+-- Dumping events for db 'lavie'
 --
 
 --
--- Dumping routines for database 'lavie'
+-- Dumping routines for db 'lavie'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
