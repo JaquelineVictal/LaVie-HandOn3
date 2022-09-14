@@ -30,5 +30,4 @@ const  Psicologos = db.define("psicologos", {
 });
 
 
-
 module.exports = Psicologos;
