@@ -1,8 +1,9 @@
-const pacientes = require("../models/pacientes");
+const Pacientes = require("../models/pacientes");
 
 const pacientesController = {
+
     listarPaciente: async (req, res) => {
-        const listaPacientes = await pacientes.findAll();
+        const listaPacientes = await Pacientes.findAll();
 
         res.status(200).json(listaPacientes);
     },
@@ -11,7 +12,7 @@ const pacientesController = {
       try {
         const { id } = req.params;
     
-        const listaUm = await pacientes.findOne({
+        const listaUm = await Pacientes.findOne({
           where: {
             id_Pacientes: id,
           },
@@ -24,22 +25,22 @@ const pacientesController = {
     },
   
 
-    async cadastrarPaciente(req, res) {
-        const { id_Pacientes, nome } = req.body;
+    cadastrarPaciente: async (req, res) => {
+
+        const {nome } = req.body;
         
-        const novoPaciente = await pacientes.create({
-            id_Pacientes,
-            nome,
+        const novoPaciente = await Pacientes.create({
+            nome
         });
 
         res.json(novoPaciente);
     },
 
-    async deletarPaciente(req, res) {
+     deletarPaciente: async (req, res) => {
         try {
         const { id } = req.params;
     
-        await pacientes.destroy({
+        await Pacientes.destroy({
           where: {
             id_Pacientes: id,
           },
