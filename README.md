@@ -105,7 +105,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 				<img
 					width="100px"
 					height="auto"
-					src="https://avatars.githubusercontent.com/u/108819944?v=4"
+					src="https://avatars.githubusercontent.com/u/91029460?v=4"
 					alt="Hellimateas Barros"
 				/>
 				<br />
@@ -119,7 +119,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 				<img
 					width="100px"
 					height="auto"
-					src="https://avatars.githubusercontent.com/u/91029460?v=4"
+					src="https://avatars.githubusercontent.com/u/108819944?v=4"
 					alt="Thais Freire"
 				/>
 				<br />
