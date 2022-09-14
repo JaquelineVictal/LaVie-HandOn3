@@ -17,7 +17,7 @@ const pacientesController = {
           },
         });
     
-        res.status(200).json(listaUm);
+        res.status(200).json;
       } catch(error) {
         return res.status(404).json("Id não encontrado!");
       }

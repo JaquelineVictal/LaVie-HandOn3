@@ -1,14 +1,19 @@
-const atendimentos = require("../models/atendimentos");
+const Atendimentos = require("../models/atendimentos");
+
 const atendimentosController = {
-    listarAtendimento: (req, res) => {
-        res.json([{ id : "1" }, { id : "2" }]);
-    },
+ // Get all 
+
+ listAll: async (req, res) => {
+    // select * from gender
+    const atendimentos = await Atendimentos.findAll();
+
+    return res.status(200).json(atendimentos);
+},
 
     async cadastrarAtendimento(req, res) {
-        const { id_Atendimentos, id_Paciente, id_Psicologo, dataAtendimento } = req.body;
+        const { id_Paciente, id_Psicologo, dataAtendimento } = req.body;
         
         const novoAtendimento = await atendimentos.create({
-            id_Atendimentos,
             id_Paciente,
             id_Psicologo,
             dataAtendimento,
@@ -17,7 +22,7 @@ const atendimentosController = {
             Psicologos_id_Psicologos,
         });
 
-        res.json(novoAtendimento);
+        return res.status(201).json(novoAtendimento);
     },
 };
 
