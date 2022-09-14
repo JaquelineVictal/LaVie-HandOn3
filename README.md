@@ -56,31 +56,81 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ##### Autores
 -----
- <p><a href="https://github.com/JaquelineVictal">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/78887686?v=4" width="100px;/>
- <br />
- <sub><b>Jaqueline Victal</b></sub></p></a>
+ <table>
+	<tr>  
+		<td align="center">
+			<a href="https://github.com/JaquelineVictal">
+				<img
+					width="100px"
+					height="auto"
+					src="https://github.com/JaquelineVictal.png"
+					alt="Jaqueline Victal"
+				/>
+				<br />
+				<sub>
+					<b>Jaqueline<br>Victal</b>
+				</sub>
+			</a>
+		</td>
+		<td align="center">
+			<a href="https://github.com/gabrieleagle">
+				<img
+					width="100px"
+					height="auto"
+					src="https://avatars.githubusercontent.com/u/109248116?v=4"
+					alt="Gabriel Eagle"
+				/>
+				<br />
+				<sub>
+					<b>Gabriel<br>Eagle</b>
+				</sub>
+			</a>
+		</td>
+		<td align="center">
+			<a href="https://github.com/alonealines">
+				<img
+					width="100px"
+					height="auto"
+					src="https://avatars.githubusercontent.com/u/100536475?v=4"
+					alt="Aline Galvão"
+				/>
+				<br />
+				<sub>
+					<b>Aline<br>Galvão</b>
+				</sub>
+			</a>
+		</td>
+		<td align="center">
+			<a href="https://github.com/hellimateas">
+				<img
+					width="100px"
+					height="auto"
+					src="https://avatars.githubusercontent.com/u/108819944?v=4"
+					alt="Hellimateas Barros"
+				/>
+				<br />
+				<sub>
+					<b>Hellimateas<br>Barros</b>
+				</sub>
+			</a>
+		</td>
+		<td align="center">
+			<a href="https://github.com/thisfreire">
+				<img
+					width="100px"
+					height="auto"
+					src="https://avatars.githubusercontent.com/u/91029460?v=4"
+					alt="Thais Freire"
+				/>
+				<br />
+				<sub>
+					<b>Thais<br>Freire</b>
+				</sub>
+			</a>
+		</td>
+      
+</table>
 
-
- <p><a href="https://github.com/gabrieleagle">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/109248116?v=4" width="100px;"/>
- <br />
- <sub><b>Gabriel</b></sub></p></a>
-
- <p><a href="https://github.com/alonealines">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/100536475?v=4" width="100px;/>
- <br />
- <sub><b>Aline Galvão</b></sub></p></a>
-
- <p><a href="https://github.com/hellimateas">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/91029460?v=4" width="100px;/>
- <br />
- <sub><b>Hellimateas</b></sub></p></a>
-
- <p><a href="https://github.com/thisfreire">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/108819944?v=4" width="100px;/>
- <br />
- <sub><b>Thais Freire</b></sub></p></a>
 
  <p>Solicitado por <a href="https://github.com/gamaacademy">Gama Academy</a></p>
 
