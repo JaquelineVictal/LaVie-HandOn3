@@ -1,7 +1,6 @@
-const db= require("../database");
+const db = require("../database");
 const { DataTypes } = require('sequelize');
 
-// Esta dando erro no db.define perguntar na aula segunda feira
 const pacientes = db.define("pacientes", {
     id_Pacientes: {
         type: DataTypes.INTEGER,
@@ -9,7 +8,7 @@ const pacientes = db.define("pacientes", {
         autoIncrement: true,
     },
     nome: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
     },
     email: {
         type: DataTypes.STRING,
@@ -18,6 +17,7 @@ const pacientes = db.define("pacientes", {
         type: DataTypes.DATE,
     }
 }, {
+
     tableName: 'pacientes', 
     timestamps: false
 });

@@ -4,6 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	8.0.30
 
+CREATE DATABASE LaVie;
+USE LaVie;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -18,39 +21,30 @@
 --
 -- Table structure for table `atendimentos`
 --
-
 DROP TABLE IF EXISTS `atendimentos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `atendimentos` (
-  `id_Atendimentos` int NOT NULL,
+  `id_Atendimentos` int NOT NULL AUTO_INCREMENT,
   `id_Pacientes` int NOT NULL,
   `id_Psicologos` int NOT NULL,
-  `dataAtendimento` date NOT NULL,
+  `dataAtendimento` datetime NOT NULL,
   `observacao` varchar(255) NOT NULL,
-  `Pacientes_id_Pacientes` int NOT NULL,
-  `Psicologos_id_Psicologos` int NOT NULL,
-  PRIMARY KEY (`id_Atendimentos`),
-  KEY `fk_Atendimentos_Pacientes_idx` (`Pacientes_id_Pacientes`),
-  KEY `fk_Atendimentos_Psicologos1_idx` (`Psicologos_id_Psicologos`),
-  CONSTRAINT `fk_Atendimentos_Pacientes` FOREIGN KEY (`Pacientes_id_Pacientes`) REFERENCES `pacientes` (`id_Pacientes`),
-  CONSTRAINT `fk_Atendimentos_Psicologos1` FOREIGN KEY (`Psicologos_id_Psicologos`) REFERENCES `psicologos` (`id_Psicologos`)
+   PRIMARY KEY (`id_Atendimentos`),
+  CONSTRAINT `fk_Atendimentos_Pacientes` FOREIGN KEY (`id_Pacientes`) REFERENCES `pacientes` (`id_Pacientes`),
+  CONSTRAINT `fk_Atendimentos_Psicologos` FOREIGN KEY (`id_Psicologos`) REFERENCES `psicologos` (`id_Psicologos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
 --
 -- Dumping data for table `atendimentos`
---
-
+-- atendimentos
 LOCK TABLES `atendimentos` WRITE;
 /*!40000 ALTER TABLE `atendimentos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `atendimentos` ENABLE KEYS */;
 UNLOCK TABLES;
-
 --
 -- Table structure for table `pacientes`
 --
-
 DROP TABLE IF EXISTS `pacientes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -67,7 +61,6 @@ CREATE TABLE `pacientes` (
 --
 -- Dumping data for table `pacientes`
 --
-
 LOCK TABLES `pacientes` WRITE;
 /*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
@@ -81,10 +74,10 @@ DROP TABLE IF EXISTS `psicologos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `psicologos` (
-  `id_Psicologos` int NOT NULL,
+  `id_Psicologos` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `senha` varchar(200) NOT NULL,
   `apresentacao` varchar(255) NOT NULL,
   PRIMARY KEY (`id_Psicologos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -116,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-10 16:49:53
+

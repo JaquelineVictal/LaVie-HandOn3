@@ -1,30 +1,31 @@
-const db = require("../database/index");
-const { DataTypes } = require('sequelize');
+const db = require('../database/index')
+const { DataTypes } = require('sequelize')
 
-
-const Atendimentos = db.define("atendimentos", {
+const Atendimentos = db.define(
+  'atendimentos',
+  {
     id_Atendimentos: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
     id_Pacientes: {
-        type: DataTypes.INTEGER
+      type: DataTypes.INTEGER
     },
     id_Psicologos: {
-        type: DataTypes.INTEGER
+      type: DataTypes.INTEGER
     },
     dataAtendimento: {
-        type: DataTypes.DATE,
-      
+      type: DataTypes.DATE
     },
     observacao: {
-        type: DataTypes.STRING,
-      
+      type: DataTypes.STRING
     }
-}, {
-    tableName: 'atendimentos', 
+  },
+  {
+    tableName: 'atendimentos',
     timestamps: false
-});
+  }
+)
 
 module.exports = Atendimentos

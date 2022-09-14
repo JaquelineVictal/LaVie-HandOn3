@@ -1,41 +1,60 @@
-const pacientes = require("../models/pacientes");
+const Pacientes = require("../models/pacientes");
+
 const pacientesController = {
+
     listarPaciente: async (req, res) => {
-        const listaDePaciente = await pacientes.findAll()
-        res.json(listaDePaciente)
+        const listaPacientes = await Pacientes.findAll();
+
+        res.status(200).json(listaPacientes);
     },
 
-    async cadastrarPaciente(req, res) {
-        const { nome, email, dataNascimento } = req.body;
+    listarUmPaciente: async (req, res) => {
+      try {
+        const { id } = req.params;
+    
+        const listaUm = await Pacientes.findOne({
+          where: {
+            id_Pacientes: id,
+          },
+        });
+    
+        res.status(200).json;
+      } catch(error) {
+        return res.status(404).json("Id não encontrado!");
+      }
+    },
+  
+
+    cadastrarPaciente: async (req, res) => {
+
+        const {nome } = req.body;
         
-        const novoPaciente = await pacientes.create({
-            nome,
-            email,
-            dataNascimento
+        const novoPaciente = await Pacientes.create({
+            nome
+>>>>>>> main
         });
 
         res.json(novoPaciente)
     },
 
-    async atualizarPaciente(req, res) {
+     deletarPaciente: async (req, res) => {
+        try {
         const { id } = req.params;
-        const { nome, email, dataNascimento } = req.body;
     
-        const produtoAtualizado = await Produtos.update(
-          {
-            nome,
-            email,
-            dataNascimento,
+
+        await Pacientes.destroy({
+          where: {
+            id_Pacientes: id,
           },
-          {
-            where: {
-              id_Pacientes: id,
-            },
-          }
-        );
+
+        });
     
-        res.json("Produto Atualizado");
-      },
+        res.status(204);
+        } catch(error) {
+        return res.status(404).json("Id não encontrado!");
+        }
+    },
+>>>>>>> main
 };
 
 module.exports = pacientesController;

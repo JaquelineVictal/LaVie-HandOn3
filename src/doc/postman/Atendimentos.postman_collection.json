@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "daa1e0c6-cb5a-45ab-9741-26535184db57",
+		"name": "Atendimentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAtendimento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/dashboard/atendimentos",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"dashboard",
+						"atendimentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAtendimentoById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "CriarAtendimento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/dashboard/atendimentos/cadastrar",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"dashboard",
+						"atendimentos",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
