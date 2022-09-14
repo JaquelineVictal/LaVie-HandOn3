@@ -16,6 +16,26 @@ const pacientesController = {
 
         res.json(novoPaciente)
     },
+
+    async atualizarPaciente(req, res) {
+        const { id } = req.params;
+        const { nome, email, dataNascimento } = req.body;
+    
+        const produtoAtualizado = await Produtos.update(
+          {
+            nome,
+            email,
+            dataNascimento,
+          },
+          {
+            where: {
+              id_Pacientes: id,
+            },
+          }
+        );
+    
+        res.json("Produto Atualizado");
+      },
 };
 
 module.exports = pacientesController;
