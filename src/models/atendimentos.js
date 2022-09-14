@@ -9,27 +9,18 @@ const Atendimentos = db.define("atendimentos", {
         autoIncrement: true,
     },
     id_Pacientes: {
-        type: DataTypes.INTEGER,
-
-        //primaryKey: true,
-        
+        type: DataTypes.INTEGER,            
        
     },
     id_Psicologos: {
         type: DataTypes.INTEGER,
-        //primaryKey: true,
-        
-
-       
+             
     },
     dataAtendimento: {
-        type: DataTypes.DATE
-           //Precisa atualizar o tipo de informação
+        type: DataTypes.DATE          
     },
     observacao: {
-        type: DataTypes.STRING
-
-        //Precisa atualizar o tipo de informação
+        type: DataTypes.STRING        
     },
     
 }, {

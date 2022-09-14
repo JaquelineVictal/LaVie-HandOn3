@@ -1,37 +1,62 @@
 const Pacientes = require("../models/pacientes");
 
-
 const pacientesController = {
-    // Get all 
 
-    listAll: async (req, res) => {
-        // select * from gender
-        const pacientes = await Pacientes.findAll();
+    listarPaciente: async (req, res) => {
+        const listaPacientes = await Pacientes.findAll();
 
-        return res.status(200).json(pacientes);
+        res.status(200).json(listaPacientes);
     },
 
+    listarUmPaciente: async (req, res) => {
+      try {
+        const { id } = req.params;
+    
+        const listaUm = await Pacientes.findOne({
+          where: {
+            id_Pacientes: id,
+          },
+        });
+    
+        res.status(200).json;
+      } catch(error) {
+        return res.status(404).json("Id não encontrado!");
+      }
+    },
+  
 
     cadastrarPaciente: async (req, res) => {
-        const { nome } = req.body;
+
+        const {nome } = req.body;
         
         const novoPaciente = await Pacientes.create({
+<<<<<<< HEAD
             nome,
             email,
             dataNascimento
+=======
+            nome
+>>>>>>> 7a5d05639c4e556fe6d1dc0e70835932c932b27e
         });
 
-        return res.status(201).json(novoPaciente);
+        res.json(novoPaciente);
     },
 
-    async deletarPaciente(req, res) {
+     deletarPaciente: async (req, res) => {
         try {
         const { id } = req.params;
     
+<<<<<<< HEAD
         await pacientes.destroy({
             where: {
                 id_Pacientes: id,
             },
+=======
+        await Pacientes.destroy({
+          where: {
+            id_Pacientes: id,
+          },
+>>>>>>> 7a5d05639c4e556fe6d1dc0e70835932c932b27e
         });
     
         res.status(204);
