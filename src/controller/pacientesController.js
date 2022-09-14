@@ -30,13 +30,7 @@ const pacientesController = {
         const {nome } = req.body;
         
         const novoPaciente = await Pacientes.create({
-<<<<<<< HEAD
-            nome,
-            email,
-            dataNascimento
-=======
             nome
->>>>>>> 7a5d05639c4e556fe6d1dc0e70835932c932b27e
         });
 
         res.json(novoPaciente);
@@ -46,17 +40,12 @@ const pacientesController = {
         try {
         const { id } = req.params;
     
-<<<<<<< HEAD
-        await pacientes.destroy({
-            where: {
-                id_Pacientes: id,
-            },
-=======
+
         await Pacientes.destroy({
           where: {
             id_Pacientes: id,
           },
->>>>>>> 7a5d05639c4e556fe6d1dc0e70835932c932b27e
+
         });
     
         res.status(204);
