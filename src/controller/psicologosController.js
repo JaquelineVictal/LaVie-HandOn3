@@ -49,7 +49,7 @@ const psicologosController = {
                 },
               });
                       
-         if (userSaved) {
+        if (userSaved) {
             return res.status(400).json("Email já cadastrado");
           }
     
@@ -148,4 +148,4 @@ const psicologosController = {
 
 
 module.exports = psicologosController;
->>>>>>> main
+

@@ -31,7 +31,7 @@ const pacientesController = {
         
         const novoPaciente = await Pacientes.create({
             nome
->>>>>>> main
+
         });
 
         res.json(novoPaciente)
@@ -54,7 +54,6 @@ const pacientesController = {
         return res.status(404).json("Id não encontrado!");
         }
     },
->>>>>>> main
 };
 
 module.exports = pacientesController;
