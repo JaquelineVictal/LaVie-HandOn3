@@ -8,11 +8,11 @@ const pacientes = db.define("pacientes", {
         autoIncrement: true,
     },
     nome: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
     },
 
     email: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
     },
 }, 
 
