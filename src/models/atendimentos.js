@@ -15,7 +15,7 @@ const Atendimentos = db.define("atendimentos", {
         type: DataTypes.INTEGER,
         references: {
             model: Pacientes,
-            key:id_Pacientes
+            key:Pacientes.id_Pacientes,
         }            
        
     },
@@ -23,7 +23,7 @@ const Atendimentos = db.define("atendimentos", {
         type: DataTypes.INTEGER,
         references: {
             model: Psicologos,
-            key:id_Psicologos
+            key:Psicologos.id_Psicologos
         }            
                     
     },
