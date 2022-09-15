@@ -17,7 +17,6 @@ const atendimentosController = {
             id_Paciente,
             id_Psicologo,
             dataAtendimento,
-            observacao            
         });
 
         return res.status(201).json(novoAtendimento);

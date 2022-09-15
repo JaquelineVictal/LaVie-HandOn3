@@ -6,8 +6,8 @@ const psicologosController = require("../controller/psicologosController");
 
 routes.get("/dashboard/login", psicologosController.login);
 
-routes.get("/dashboard/atendimentos", atendimentosController.listarAtendimento);
-routes.get("/dashboard/atendimentos/:id", atendimentosController.listarAtendimento);
+routes.get("/dashboard/atendimentos", atendimentosController.listAll);
+routes.get("/dashboard/atendimentos/:id", atendimentosController.listAll);
 routes.post("/dashboard/atendimentos/cadastrar", atendimentosController.cadastrarAtendimento);
 
 routes.get("/dashboard/psicologos", psicologosController.listAll);
