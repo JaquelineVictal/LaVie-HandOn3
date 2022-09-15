@@ -1,4 +1,4 @@
-const Atendimentos = require("../models/atendimentos");
+const Atendimentos = require("../models/index.js");
 
 const atendimentosController = {
  // Get all 
