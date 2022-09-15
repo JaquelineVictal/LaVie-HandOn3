@@ -1,11 +1,12 @@
-const Pacientes = require("../models/index.js");
+const { ValidationError } = require("sequelize");
+const Pacientes = require("../models/pacientes");
 
 const pacientesController = {
 
     listarPaciente: async (req, res) => {
         const listaPacientes = await Pacientes.findAll();
 
-        res.status(200).json(listaPacientes);
+        res.status(200).json(listaPacientes); 
     },
 
     listarUmPaciente: async (req, res) => {
@@ -37,7 +38,12 @@ const pacientesController = {
 
         res.json(novoPaciente)
       } catch(error){
-        return res.json("email já utilizado! tente outro email. :D")
+        if(error.message == "Validation error")
+        {
+        return res.json("Email já cadastrado. Por favor, digite outro email!")
+      } else{
+        return res.json("Data incorreta")
+      }
       }
     },
 
