@@ -1,7 +1,9 @@
 const db = require("../database");
 const { DataTypes } = require('sequelize');
+const Pacientes = require("../models/pacientes");
+const Psicologos = require("../models/psicologos");
 
-// Esta dando erro no db.define perguntar na aula segunda feira para o professor
+
 const Atendimentos = db.define("atendimentos", {
     id_Atendimentos: {
         type: DataTypes.INTEGER,
@@ -9,12 +11,20 @@ const Atendimentos = db.define("atendimentos", {
         autoIncrement: true,
     },
     id_Pacientes: {
-        type: DataTypes.INTEGER,            
+        type: DataTypes.INTEGER,
+        references: {
+            model: Pacientes,
+            key:id_Pacientes
+        }            
        
     },
     id_Psicologos: {
         type: DataTypes.INTEGER,
-             
+        references: {
+            model: Psicologos,
+            key:id_Psicologos
+        }            
+                    
     },
     dataAtendimento: {
         type: DataTypes.DATE          
