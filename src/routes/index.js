@@ -4,15 +4,15 @@ const dashboardController = require("../controller/dashboardController");
 const pacientesController = require("../controller/pacientesController");
 const psicologosController = require("../controller/psicologosController");
 
-const psicologosCreatedValidation = requeri("../validations/psicologos/created");
-const psicologosDeletedValidation = requeri("../validations/psicologos/deleted");
-const psicologosGetOneValidation = requeri("../validations/psicologos/getOne");
-const psicologosUpdateValidation = requeri("../validations/psicologos/update");
+const psicologosCreatedValidation = require("../validations/psicologos/create");
+const psicologosDeletedValidation = require("../validations/psicologos/deleted");
+const psicologosGetOneValidation = require("../validations/psicologos/getOne");
+const psicologosUpdateValidation = require("../validations/psicologos/update");
 
-const pacientesCreatedValidation = requeri("../validations/pacientes/created");
-const pacientesDeletedValidation = requeri("../validations/pacientes/deleted");
-const pacientesGetOneValidation = requeri("../validations/pacientes/getOne");
-const pacientesUpdateValidation = requeri("../validations/pacientes/update");
+const pacientesCreatedValidation = require("../validations/pacientes/create");
+const pacientesDeletedValidation = require("../validations/pacientes/deleted");
+const pacientesGetOneValidation = require("../validations/pacientes/getOne");
+const pacientesUpdateValidation = require("../validations/pacientes/update");
 
 const routes = express.Router();
 
