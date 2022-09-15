@@ -2,25 +2,30 @@ const express = require("express");
 const atendimentosController = require("../controller/atendimentosController");
 const pacientesController = require("../controller/pacientesController");
 const psicologosController = require("../controller/psicologosController");
+const psicologoCreatedValidation = requeri("../validations/psicologos/created");
+const psicologoDeletedValidation = requeri("../validations/psicologos/deleted");
+const psicologoGetOneValidation = requeri("../validations/psicologos/getOne");
+const psicologoUpdateValidation = requeri("../validations/psicologos/update");
+
 const routes = express.Router();
 
-routes.get("/dashboard/login", psicologosController.login);
+routes.post("/dashboard/login", psicologosController.login);
 
-routes.get("/dashboard/psicologos", psicologosController.listAll);
-routes.get("/dashboard/psicologos/:id_Psicologos", psicologosController.getOne);
-routes.post("/dashboard/psicologos/cadastrar", psicologosController.cadastrarPsicologo);
-routes.put("/dashboard/psicologos/:id_Psicologos", psicologosController.updatePsicologo);  //Precisa criar a rota
-routes.delete("/dashboard/psicologos/:id_Psicologos", psicologosController.deletarPsicologo);
+routes.get("/psicologos", psicologosController.listAll);
+routes.get("/psicologos/:id_Psicologos", psicologoGetOneValidation, psicologosController.getOne);
+routes.post("/psicologos", psicologoCreatedValidation, psicologosController.cadastrarPsicologo);
+routes.put("/psicologos/:id_Psicologos", psicologoUpdateValidation, psicologosController.updatePsicologo);  //Precisa criar a rota
+routes.delete("/psicologos/:id_Psicologos", psicologoDeletedValidation, psicologosController.deletarPsicologo);
 
--routes.get("/dashboard/pacientes", pacientesController.listarPaciente);
-routes.get("/dashboard/pacientes/:id", pacientesController.listarPaciente);
-routes.post("/dashboard/pacientes", pacientesController.cadastrarPaciente);
-routes.delete("/dashboard/pacientes/:id", pacientesController.listarPaciente);  //Precisa criar a rota
-routes.put("/dashboard/pacientes/:id", pacientesController.listarPaciente);  //Precisa criar a rota
+-routes.get("/pacientes", pacientesController.listarPaciente);
+routes.get("/pacientes/:id", pacientesController.listarPaciente);
+routes.post("/pacientes", pacientesController.cadastrarPaciente);
+routes.delete("/pacientes/:id", pacientesController.listarPaciente);  //Precisa criar a rota
+routes.put("/pacientes/:id", pacientesController.listarPaciente);  //Precisa criar a rota
 
 
-routes.get("/dashboard/atendimentos", atendimentosController.listarAtendimento);
-routes.get("/dashboard/atendimentos/:id", atendimentosController.listarAtendimento);
-routes.post("/dashboard/atendimentos/cadastrar", atendimentosController.cadastrarAtendimento);
+routes.get("/atendimentos", atendimentosController.listarAtendimento);
+routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
+routes.post("/atendimentos/cadastrar", atendimentosController.cadastrarAtendimento);
 
 module.exports = routes;

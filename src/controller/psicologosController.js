@@ -9,7 +9,6 @@ const psicologosController = {
     // Get all 
 
     listAll: async (req, res) => {
-
         try {
             // select * from gender
         const psicologos = await Psicologos.findAll();
@@ -24,27 +23,25 @@ const psicologosController = {
     
     // Get by id
     getOne: async (req, res) => {
+
         const { id_Psicologos } = req.params;
         
-        try {
-            const psicologo = await Psicologos.findByPk(id_Psicologos);
+        const psicologo = await Psicologos.findByPk(id_Psicologos);
     
-            return  res.status(200).json(psicologo);
-        } catch (error) {
-            console.log(error);    
-        }
-        
+        return  res.status(200).json(psicologo);
+         
       },
+        
+      
 
     // Cadastro de Psicilogos
 
     cadastrarPsicologo: async (req, res) => {
+
         const { nome, email, senha, apresentacao } = req.body;
 
-        try {
-            const senhaHash = bcrypt.hashSync(senha, 10);
-
-            const userSaved = await Psicologos.count({
+        const senhaHash = bcrypt.hashSync(senha, 10);
+        const userSaved = await Psicologos.count({
                 where: {
                   email
                 },
@@ -59,14 +56,10 @@ const psicologosController = {
             email,
             senha: senhaHash,
             apresentacao
-        });
+           });
     
           return res.status(201).json(novoPsicologo);
-        } catch (error) {
-          console.log(error);
-        }
-        
-    },   
+      },   
 
     login: async (req, res) => {
 
@@ -103,9 +96,7 @@ const psicologosController = {
         const { id_Psicologos } = req.params;
         const { nome, email, senha, apresentacao } = req.body;
 
-        try {
-
-            const psicologoUpdate = await Psicologos.update(
+        const psicologoUpdate = await Psicologos.update(
                 {
                   nome,
                   email,
@@ -119,18 +110,12 @@ const psicologosController = {
                 }
               );
           
-              return res.status(200).json(psicologoUpdate);
-            
-        } catch (error) {
-            console.log(error);
-        }
-    
-        
-      },
+        return res.status(200).json(psicologoUpdate);
+     },
     
 
     deletarPsicologo: async (req, res) => {
-        try {
+      
         const { id_Psicologo } = req.params;
     
         await Psicologos.destroy({
@@ -140,9 +125,6 @@ const psicologosController = {
         });
     
         res.status(204);
-      } catch(error) {
-        return res.status(404).json("Id não encontrado!");
-      }
     },
 
 };
