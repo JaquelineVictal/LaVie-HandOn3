@@ -10,6 +10,7 @@ const atendimentos = db.define("atendimentos", {
     },
     id_Pacientes: {
         type: DataTypes.INTEGER,
+<<<<<<< Updated upstream
         primaryKey: true,
         autoIncrement: true,
     },
@@ -24,6 +25,20 @@ const atendimentos = db.define("atendimentos", {
     },
     observacao: {
         //Precisa atualizar o tipo de informação
+=======
+         
+    },
+    id_Psicologos: {
+        type: DataTypes.INTEGER,
+               
+    },
+    dataAtendimento: {
+        type: DataTypes.DATE
+    },
+    observacao: {
+        type: DataTypes.STRING
+
+>>>>>>> Stashed changes
     },
     Pacientes_id_Pacientes: {
         //Precisa atualizar o tipo de informação
