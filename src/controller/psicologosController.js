@@ -1,4 +1,4 @@
-const Psicologos = require("../models/psicologos");
+const Psicologos = require("../models/index.js");
 const bcrypt = require("bcryptjs");
 
 
