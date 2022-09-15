@@ -36,13 +36,13 @@ const pacientesController = {
             dataNascimento
         });
 
-        res.json(novoPaciente)
+        res.status(201).json(novoPaciente)
       } catch(error){
         if(error.message == "Validation error")
         {
-        return res.json("Email já cadastrado. Por favor, digite outro email!")
+        return res.status(400).json("Email já cadastrado. Por favor, digite outro email!")
       } else{
-        return res.json("Data incorreta")
+        return res.status(400).json("Data incorreta. Ex: AAAA-MM-DD")
       }
       }
     },
