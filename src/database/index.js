@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../database");
 
-const db_NAME = "scriptDoDatabaseLaVie--id";
+const db_NAME = "LaVie";
 const db_USER = "root";
 const db_PASS = "";
 const db_CONFIG = { 
