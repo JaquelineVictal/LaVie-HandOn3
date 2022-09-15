@@ -28,7 +28,7 @@ const pacientesController = {
     cadastrarPaciente: async (req, res) => {
 
         const {nome, email, dataNascimento } = req.body;
-        
+        try{
         const novoPaciente = await Pacientes.create({
             nome,
             email,
@@ -36,6 +36,9 @@ const pacientesController = {
         });
 
         res.json(novoPaciente)
+      } catch(error){
+        return res.json("email já utilizado! tente outro email. :D")
+      }
     },
 
      deletarPaciente: async (req, res) => {
