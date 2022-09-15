@@ -27,11 +27,12 @@ const pacientesController = {
 
     cadastrarPaciente: async (req, res) => {
 
-        const {nome } = req.body;
+        const {nome, email, dataNascimento } = req.body;
         
         const novoPaciente = await Pacientes.create({
-            nome
-
+            nome,
+            email,
+            dataNascimento
         });
 
         res.json(novoPaciente)
