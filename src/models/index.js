@@ -1,25 +1,31 @@
-const atendimentos = require("./atendimentos");
-const pacientes = require("./pacientes");
-const psicologos = require("./psicologos");
+const Atendimentos = require("../models/atendimentos");
+const Pacientes = require("../models/pacientes");
+const Psicologos = require("../models/psicologos");
 
-atendimentos.belongsTo(psicologos,{
-    foreignKey: "id_Psicologos",
+//Relacionamento com Sequilise
+
+Atendimentos.belongsTo(Pacientes,{
+    foreignKey: "id_Pacientes"
+
 });
 
-psicologos.hasMany(atendimentos,{
-    foreignKey: "id_Psicologos",
+Pacientes.hasMany(Atendimentos,{
+    foreignKey: "id_Pacientes"
+
+})
+
+Atendimentos.belongsTo(Psicologos,{
+    foreignKey: "id_Psicologos"
+
 });
 
-pacientes.hasMany(atendimentos,{
-    foreignKey: "id_Pacientes",
-});
+Psicologos.hasMany(Atendimentos,{
+    foreignKey: "id_Psicologos"
 
-atendimentos.belongsTo(pacientes,{
-    foreignKey:"id_Pacientes",
-});
+})
 
 module.exports = {
-    atendimentos, 
-    pacientes, 
-    psicologos
+    Atendimentos,
+    Pacientes,
+    Psicologos
 }
