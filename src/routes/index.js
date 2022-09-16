@@ -19,7 +19,7 @@ routes.delete("/dashboard/psicologos/:id_Psicologos", psicologosController.delet
 routes.get("/dashboard/pacientes", pacientesController.listarPaciente);
 routes.get("/dashboard/pacientes/:id", pacientesController.listarPaciente);
 routes.post("/dashboard/pacientes", pacientesController.cadastrarPaciente);
-routes.delete("/dashboard/pacientes/:id", pacientesController.listarPaciente);  //Precisa criar a rota
-routes.put("/dashboard/pacientes/:id", pacientesController.listarPaciente);  //Precisa criar a rota
+routes.delete("/dashboard/pacientes/:id", pacientesController.updatePaciente);  //Precisa criar a rota
+routes.put("/dashboard/pacientes/:id", pacientesController.updatePaciente);  //Precisa criar a rota
 
 module.exports = routes;
