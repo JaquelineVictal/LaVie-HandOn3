@@ -3,7 +3,7 @@ const { Atendimentos } = require("../models/index.js");
 const atendimentosController = {
 
  listarAtendimento: async (req, res) => {
-        const listaAtendimentos = await atendimentos.findAll();
+        const listaAtendimentos = await Atendimentos.findAll();
 
         res.status(200).json(listaAtendimentos);
     },
@@ -24,13 +24,13 @@ const atendimentosController = {
 
 
     cadastrarAtendimento: async (req, res) => {
-        const { id_Paciente, id_Psicologo, dataAtendimento } = req.body;
+        const { id_Pacientes, id_Psicologos, dataAtendimento, observacao } = req.body;
         
         const novoAtendimento = await Atendimentos.create({
-            id_Paciente,
-            id_Psicologo,
+            id_Pacientes,
+            id_Psicologos,
             dataAtendimento,
-            observacao            
+            observacao
         });
 
         return res.status(201).json(novoAtendimento);
