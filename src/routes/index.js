@@ -18,6 +18,7 @@ const pacientesGetOneValidation = require("../validations/pacientes/getOne");
 const pacientesUpdateValidation = require("../validations/pacientes/update");
 
 const atendimentosCreatedValidation = require("../validations/atendimento/created")
+const atendimentosGetOneValidation = require("../validations/atendimento/getOne")
 
 const loginValidation = require("../validations/login/login")
 const authValidation = require("../middleware/auth")
@@ -40,7 +41,7 @@ routes.delete("/pacientes/:id", pacientesDeletedValidation, pacientesController.
 routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.updatePaciente);  //Precisa criar a rota
 
 routes.get("/atendimentos", atendimentosController.listarAtendimento);
-routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
+routes.get("/atendimentos/:id_Atendimentos", atendimentosGetOneValidation, atendimentosController.listarUmAtendimento);
 routes.post("/atendimentos",atendimentosCreatedValidation, authValidation, atendimentosController.cadastrarAtendimento);
 
 

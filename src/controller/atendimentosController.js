@@ -10,11 +10,9 @@ const atendimentosController = {
 
     listarUmAtendimento: async (req, res) => {
         
-            const { id } = req.params;
+            const { id_Atendimentos } = req.params;
         
-            const listaUmAtendimento = await Atendimentos.findByPk(id, {
-              include: [pacientes, psicologos]
-            });
+            const listaUmAtendimento = await Atendimentos.findByPk(id_Atendimentos);
 
             if(!listaUmAtendimento){
               return res.status(404).json('Id não encontrado');
