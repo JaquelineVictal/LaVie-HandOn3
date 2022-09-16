@@ -17,8 +17,12 @@ const pacientesController = {
             id_Pacientes: id,
           },
         });
+
+        if(!listaUm.length){
+          return res.status(404).json('Id não encontrado');
+        }
     
-        res.status(200).json(listaUm);
+        return res.status(200).json(listaUm);
       
     },
   
