@@ -2,11 +2,11 @@ const Sequelize = require("sequelize");
 
 const DB_NAME = "LaVie";
 const DB_USER = "root";
-const DB_PASS = "admin" //pass banco Hellimateas//"$_Jaque1206_$";
+const DB_PASS = "$_Jaque1206_$";
 const DB_CONFIG = { 
     dialect: 'mysql', 
     host: 'localhost', 
-    port: 3307 //3306
+    port: 3306
 };
 
 // Conexão com o banco de dados
