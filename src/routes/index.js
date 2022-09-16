@@ -29,7 +29,7 @@ routes.get("/pacientes", pacientesController.listarPaciente);
 routes.get("/pacientes/:id", pacientesGetOneValidation, pacientesController.listarPaciente);
 routes.post("/pacientes", pacientesCreatedValidation, pacientesController.cadastrarPaciente);
 routes.delete("/pacientes/:id", pacientesDeletedValidation, pacientesController.listarPaciente);  //Precisa criar a rota
-routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.listarPaciente);  //Precisa criar a rota
+routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.updatePaciente);  //Precisa criar a rota
 
 routes.get("/atendimentos", atendimentosController.listarAtendimento);
 routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
