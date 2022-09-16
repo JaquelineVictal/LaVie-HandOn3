@@ -12,4 +12,4 @@ app.use(express.json());
 app.use(routes);
 app.use(error);
 
-app.listen(4000, () => console.log("Servidor rodando na porta 4000"));
+app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
