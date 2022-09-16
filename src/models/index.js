@@ -22,10 +22,10 @@ Atendimentos.belongsTo(Psicologos,{
 Psicologos.hasMany(Atendimentos,{
     foreignKey: "id_Psicologos"
 
-})
+});
 
 module.exports = {
     Atendimentos,
     Pacientes,
     Psicologos
-}
+};
