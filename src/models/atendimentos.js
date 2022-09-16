@@ -15,7 +15,7 @@ const Atendimentos = db.define("atendimentos", {
     id_Pacientes: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'pacientes',
+            model: Pacientes,
             key:'id_Pacientes'
         }            
       
@@ -23,7 +23,7 @@ const Atendimentos = db.define("atendimentos", {
     id_Psicologos: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'psicologos',
+            model: Psicologos,
             key:'id_Psicologos'
         }            
                     
