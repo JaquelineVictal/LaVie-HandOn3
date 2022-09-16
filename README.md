@@ -5,7 +5,7 @@
 <hr>
 
 <p align="center">
- <a href="">API Documentação</a> •
+ <a href="http://127.0.0.1:5500/docs/index.html">API Documentação</a> •
 </p>
 <hr>
 
