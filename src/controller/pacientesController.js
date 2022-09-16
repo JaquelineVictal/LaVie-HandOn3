@@ -53,7 +53,7 @@ const pacientesController = {
       const {nome, email, dataNascimento } = req.body;
            
 
-      const pacienteUpdate = await Psicologos.update(
+      const pacienteUpdate = await Pacientes.update(
               {
                 nome,
                 email,

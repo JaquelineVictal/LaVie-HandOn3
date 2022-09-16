@@ -25,7 +25,7 @@ const authValidation = require("../middleware/auth")
 const routes = express.Router();
 
 
-routes.post("login", loginValidation, loginController.login);
+routes.post("/login", loginValidation, loginController.login);
 
 routes.get("/psicologos", psicologosController.listAll);
 routes.get("/psicologos/:id_Psicologos", psicologosGetOneValidation, psicologosController.getOne);
@@ -34,9 +34,9 @@ routes.put("/psicologos/:id_Psicologos", psicologosUpdateValidation, psicologosC
 routes.delete("/psicologos/:id_Psicologos", psicologosDeletedValidation, psicologosController.deletarPsicologo);
 
 routes.get("/pacientes", pacientesController.listarPaciente);
-routes.get("/pacientes/:id", pacientesGetOneValidation, pacientesController.listarPaciente);
+routes.get("/pacientes/:id_Pacientes", pacientesGetOneValidation, pacientesController.listarPaciente);
 routes.post("/pacientes", pacientesCreatedValidation, pacientesController.cadastrarPaciente);
-routes.delete("/pacientes/:id", pacientesDeletedValidation, pacientesController.listarPaciente);  //Precisa criar a rota
+routes.delete("/pacientes/:id", pacientesDeletedValidation, pacientesController.deletarPaciente);  //Precisa criar a rota
 routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.updatePaciente);  //Precisa criar a rota
 
 routes.get("/atendimentos", atendimentosController.listarAtendimento);

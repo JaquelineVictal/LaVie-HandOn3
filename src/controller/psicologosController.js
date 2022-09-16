@@ -95,11 +95,11 @@ const psicologosController = {
 
     deletarPsicologo: async (req, res) => {
       
-        const { id_Psicologo } = req.params;
+        const { id_Psicologos } = req.params;
     
         await Psicologos.destroy({
           where: {
-            id_Psicologo
+            id_Psicologos
           },
         });
     
