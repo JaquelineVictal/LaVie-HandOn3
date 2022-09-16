@@ -21,19 +21,19 @@ routes.post("login", psicologosController.login);
 routes.get("/psicologos", psicologosController.listAll);
 routes.get("/psicologos/:id_Psicologos", psicologosGetOneValidation, psicologosController.getOne);
 routes.post("/psicologos", psicologosCreatedValidation, psicologosController.cadastrarPsicologo);
-routes.put("/psicologos/:id_Psicologos", psicologosUpdateValidation, psicologosController.updatePsicologo);  //Precisa criar a rota
+routes.put("/psicologos/:id_Psicologos", psicologosUpdateValidation, psicologosController.updatePsicologo);  
 routes.delete("/psicologos/:id_Psicologos", psicologosDeletedValidation, psicologosController.deletarPsicologo);
 
 
 routes.get("/pacientes", pacientesController.listarPaciente);
 routes.get("/pacientes/:id", pacientesGetOneValidation, pacientesController.listarPaciente);
-routes.post("/pacientes", pacientesCreatedValidation, pacientesController.cadastrarPaciente);
-routes.delete("/pacientes/:id", pacientesDeletedValidation, pacientesController.listarPaciente);  //Precisa criar a rota
-routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.updatePaciente);  //Precisa criar a rota
+routes.post("/pacientes", pacientesCreatedValidation, pacientesController.cadastrarPaciente);//Hellimateas
+routes.delete("/pacientes/:id", pacientesDeletedValidation, pacientesController.listarPaciente);  
+routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.updatePaciente);  //Hellimateas
 
 routes.get("/atendimentos", atendimentosController.listarAtendimento);
 routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
-routes.post("/atendimentos/cadastrar", atendimentosController.cadastrarAtendimento);
+routes.post("/atendimentos/cadastrar", atendimentosController.cadastrarAtendimento);//Hellimateas
 
 
 routes.get("/dashboard/numero-pacientes", dashboardController.contarPacientes);
