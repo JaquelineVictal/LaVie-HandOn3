@@ -6,7 +6,7 @@ const { DataTypes } = require('sequelize');
 const  Psicologos = db.define("psicologos", {
 
 
-
+ //JSON Document
     id_Psicologos: {
         type: DataTypes.INTEGER,
         primaryKey: true,
