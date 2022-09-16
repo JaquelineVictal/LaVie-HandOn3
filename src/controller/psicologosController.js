@@ -1,5 +1,5 @@
 
-const Psicologos = require("../models/index.js");
+const { Psicologos } = require("../models/index");
 const bcrypt = require("bcryptjs");
 
 
