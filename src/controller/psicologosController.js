@@ -103,7 +103,7 @@ const psicologosController = {
           },
         });
     
-        res.status(204);
+        return res.status(204).json("Deleted");
     },
 
 };
