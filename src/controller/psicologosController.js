@@ -27,8 +27,13 @@ const psicologosController = {
         const { id_Psicologos } = req.params;
         
         const psicologo = await Psicologos.findByPk(id_Psicologos);
+
+        if(!psicologo.length){
+          return res.status(404).json('Id não encontrado');
+        }
     
         return  res.status(200).json(psicologo);
+
          
       },
         
