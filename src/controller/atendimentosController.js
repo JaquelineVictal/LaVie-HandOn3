@@ -3,23 +3,25 @@ const { Atendimentos } = require("../models/index.js");
 const atendimentosController = {
 
  listarAtendimento: async (req, res) => {
-        const listaAtendimentos = await atendimentos.findAll();
+        const listaAtendimentos = await Atendimentos.findAll();
 
         res.status(200).json(listaAtendimentos);
     },
 
     listarUmAtendimento: async (req, res) => {
-        try {
+        
             const { id } = req.params;
         
-            const listaUmAtendimento = await atendimentos.findByPk(id, {
+            const listaUmAtendimento = await Atendimentos.findByPk(id, {
               include: [pacientes, psicologos]
             });
+
+            if(!listaUmAtendimento){
+              return res.status(404).json('Id não encontrado');
+            }
         
             res.status(200).json(listaUmAtendimento);
-          } catch(error) {
-            return res.status(404).json("Id não encontrado!");
-          }
+         
     },
 
 
