@@ -10,15 +10,16 @@ const Pacientes = db.define("pacientes", {
     nome: {
         type: DataTypes.STRING,
     },
+
     email: {
         type: DataTypes.STRING,
     },
     dataNascimento: {
-
         type: DataTypes.DATE
     }
 
 }, 
+
 {
     tableName: 'pacientes', 
     timestamps: false
