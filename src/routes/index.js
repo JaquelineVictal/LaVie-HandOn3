@@ -17,6 +17,8 @@ const pacientesDeletedValidation = require("../validations/pacientes/deleted");
 const pacientesGetOneValidation = require("../validations/pacientes/getOne");
 const pacientesUpdateValidation = require("../validations/pacientes/update");
 
+const atendimentosCreatedValidation = require("../validations/atendimento/created")
+
 const loginValidation = require("../validations/login/login")
 const authValidation = require("../middleware/auth")
 
@@ -39,7 +41,7 @@ routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.upda
 
 routes.get("/atendimentos", atendimentosController.listarAtendimento);
 routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
-routes.post("/atendimentos", authValidation, atendimentosController.cadastrarAtendimento);
+routes.post("/atendimentos",atendimentosCreatedValidation, authValidation, atendimentosController.cadastrarAtendimento);
 
 
 routes.get("/dashboard/numero-pacientes", dashboardController.contarPacientes);

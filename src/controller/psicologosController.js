@@ -28,7 +28,7 @@ const psicologosController = {
         
         const psicologo = await Psicologos.findByPk(id_Psicologos);
 
-        if(!psicologo.length){
+        if(!psicologo){
           return res.status(404).json('Id não encontrado');
         }
     
@@ -66,33 +66,7 @@ const psicologosController = {
           return res.status(201).json(novoPsicologo);
       },   
 
-    login: async (req, res) => {
-
-        const { email, senha } = req.body;
-
-        try {
-
-            const userSaved = await Psicologos.findOne({
-                where: {
-                  email,
-                },
-              });
-          
-              if (!userSaved) {
-                return res.status(400).json("Usuario não cadastrado");
-              }
-          
-              if (!bcrypt.compareSync(senha, userSaved.senha)) {
-                return res.status(400).json("Senha incorreta");
-              }
-          
-              return res.status(200).json("Login com sucesso!");
-            
-        } catch (error) {
-            console.log(error);
-        }   
-      },
-    
+   
 
 
     // Editar por Id
