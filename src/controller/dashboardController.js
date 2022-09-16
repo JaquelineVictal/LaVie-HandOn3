@@ -1,6 +1,6 @@
-const Atendimentos = require("../models/atendimentos");
-const Pacientes = require("../models/pacientes");
-const Psicologos = require("../models/psicologos");
+const { Atendimentos } = require("../models/index");
+const { Pacientes } = require("../models/index");
+const { Psicologos } = require("../models/index");
 
 const dashboardController = {
 
