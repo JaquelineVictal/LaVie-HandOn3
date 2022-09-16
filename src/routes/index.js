@@ -1,4 +1,7 @@
 const express = require("express");
+
+const loginController = require("../controller/loginController")
+
 const atendimentosController = require("../controller/atendimentosController");
 const dashboardController = require("../controller/dashboardController");
 const pacientesController = require("../controller/pacientesController");
@@ -14,10 +17,13 @@ const pacientesDeletedValidation = require("../validations/pacientes/deleted");
 const pacientesGetOneValidation = require("../validations/pacientes/getOne");
 const pacientesUpdateValidation = require("../validations/pacientes/update");
 
+const loginValidation = require("../validations/login/login")
+const authValidation = require("../middleware/auth")
+
 const routes = express.Router();
 
 
-routes.post("login", psicologosController.login);
+routes.post("login", loginValidation, loginController.login);
 
 routes.get("/psicologos", psicologosController.listAll);
 routes.get("/psicologos/:id_Psicologos", psicologosGetOneValidation, psicologosController.getOne);
@@ -33,7 +39,7 @@ routes.put("/pacientes/:id", pacientesUpdateValidation, pacientesController.list
 
 routes.get("/atendimentos", atendimentosController.listarAtendimento);
 routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
-routes.post("/atendimentos/cadastrar", atendimentosController.cadastrarAtendimento);
+routes.post("/atendimentos", authValidation, atendimentosController.cadastrarAtendimento);
 
 
 routes.get("/dashboard/numero-pacientes", dashboardController.contarPacientes);
