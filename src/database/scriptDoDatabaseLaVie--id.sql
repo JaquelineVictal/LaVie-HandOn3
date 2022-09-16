@@ -18,30 +18,7 @@ USE LaVie;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `atendimentos`
---
-DROP TABLE IF EXISTS `atendimentos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `atendimentos` (
-  `id_Atendimentos` int NOT NULL AUTO_INCREMENT,
-  `id_Pacientes` int NOT NULL,
-  `id_Psicologos` int NOT NULL,
-  `dataAtendimento` datetime NOT NULL,
-  `observacao` varchar(255) NOT NULL,
-   PRIMARY KEY (`id_Atendimentos`),
-  CONSTRAINT `fk_Atendimentos_Pacientes` FOREIGN KEY (`id_Pacientes`) REFERENCES `pacientes` (`id_Pacientes`),
-  CONSTRAINT `fk_Atendimentos_Psicologos` FOREIGN KEY (`id_Psicologos`) REFERENCES `psicologos` (`id_Psicologos`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
---
--- Dumping data for table `atendimentos`
--- atendimentos
-LOCK TABLES `atendimentos` WRITE;
-/*!40000 ALTER TABLE `atendimentos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `atendimentos` ENABLE KEYS */;
-UNLOCK TABLES;
+
 --
 -- Table structure for table `pacientes`
 --
@@ -90,6 +67,31 @@ CREATE TABLE `psicologos` (
 LOCK TABLES `psicologos` WRITE;
 /*!40000 ALTER TABLE `psicologos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `psicologos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `atendimentos`
+--
+DROP TABLE IF EXISTS `atendimentos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `atendimentos` (
+  `id_Atendimentos` int NOT NULL AUTO_INCREMENT,
+  `id_Pacientes` int,
+  `id_Psicologos` int,
+  `dataAtendimento` datetime NOT NULL,
+  `observacao` varchar(255) NOT NULL,
+   PRIMARY KEY (`id_Atendimentos`),
+  CONSTRAINT `fk_Atendimentos_Pacientes` FOREIGN KEY (`id_Pacientes`) REFERENCES `pacientes` (`id_Pacientes`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk_Atendimentos_Psicologos` FOREIGN KEY (`id_Psicologos`) REFERENCES `psicologos` (`id_Psicologos`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+--
+-- Dumping data for table `atendimentos`
+-- atendimentos
+LOCK TABLES `atendimentos` WRITE;
+/*!40000 ALTER TABLE `atendimentos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `atendimentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
