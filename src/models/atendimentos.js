@@ -11,19 +11,20 @@ const Atendimentos = db.define("atendimentos", {
       primaryKey: true,
       autoIncrement: true
     },
+
     id_Pacientes: {
         type: DataTypes.INTEGER,
         references: {
-            model: Pacientes,
-            key:Pacientes.id_Pacientes,
+            model: 'pacientes',
+            key:'id_Pacientes'
         }            
-       
+      
     },
     id_Psicologos: {
         type: DataTypes.INTEGER,
         references: {
-            model: Psicologos,
-            key:Psicologos.id_Psicologos
+            model: 'psicologos',
+            key:'id_Psicologos'
         }            
                     
     },

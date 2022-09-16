@@ -1,4 +1,4 @@
-const Pacientes = require("../models/pacientes");
+const { Pacientes } = require("../models/index.js");
 
 const pacientesController = {
 
@@ -9,7 +9,7 @@ const pacientesController = {
     },
 
     listarUmPaciente: async (req, res) => {
-      try {
+      
         const { id } = req.params;
     
         const listaUm = await Pacientes.findOne({
@@ -18,16 +18,14 @@ const pacientesController = {
           },
         });
     
-        res.status(200).json;
-      } catch(error) {
-        return res.status(404).json("Id não encontrado!");
-      }
+        res.status(200).json(listaUm);
+      
     },
   
-
     cadastrarPaciente: async (req, res) => {
 
         const {nome, email, dataNascimento } = req.body;
+
         try{
         const novoPaciente = await Pacientes.create({
             nome,
@@ -45,6 +43,7 @@ const pacientesController = {
       }
       }
     },
+
 
     updatePaciente: async (req, res) => {
       const {id} = req.params
@@ -101,7 +100,6 @@ const pacientesController = {
     },
 
     deletarPaciente: async (req, res) => {
-        try {
         const { id } = req.params;
     
 
@@ -112,10 +110,8 @@ const pacientesController = {
 
         });
     
-        res.status(204);
-        } catch(error) {
-        return res.status(404).json("Id não encontrado!");
-        }
+      return res.status(204);
+            
     },
 };
 
